@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Our Site</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="{% static 'html5shiv.js'%}"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'main.css' %}"/>
+		<!--[if lte IE 9]><link rel="stylesheet" href="{% static 'ie9.css'%}" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+						<div class="row">
+							<div class="12u">
+
+								<!-- Logo -->
+									<h1><a href="" id="logo">Our Site</a></h1>
+
+								<!-- Nav -->
+									<nav id="nav">
+										<a href="/home">Главная страница</a>
+										<a href="/participants">Участники</a>
+										<a href="/vacancies">Вакансии</a>
+										<a href="/courses">Курсы</a>
+										<a href="/articles">Статьи</a>
+									</nav>
+
+							</div>
+						</div>
+					</header>
+					<div id="banner">
+						<div class="container">
+							<div class="row">
+								<div class="6u 12u(mobile)">
+
+									<!-- Banner Copy -->
+										<p>Политика партии</p>
+										<p>{{party_policy.idea}}<a href="all_text"><font size="5" color="white" face="courier">...more</font><a></p>
+
+								</div>
+								<div class="6u 12u(mobile)">
+
+									<!-- Banner Image -->
+										<a href="#" class="bordered-feature-image"><img src="{% static 'Logo.jpg'%}" width="300" height="300" alt="" /></a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Features -->
+				<div id="features-wrapper">
+					<div id="features">
+						<div class="container">
+							<div class="row">
+								<div class="3u 12u(mobile)">
+
+									<!-- Feature #1 -->
+										<section>
+											<a href="/participants" class="bordered-feature-image"><img src="{% static 'participants.jpg'%}" height="166" alt="" /></a>
+											<h2>Участники</h2>
+											<p>Здесь представлен список участников проекта. 
+											В этом разделе вы сможите познакомится с работами учасников и их достижениями.</p> 
+											
+										</section>
+
+								</div>
+								<div class="3u 12u(mobile)">
+
+									<!-- Feature #2 -->
+										<section>
+											<a href="/vacancies" class="bordered-feature-image"><img src="{% static 'vacancies.jpg'%}" height="166" alt="" /></a>
+											<h2>Вакансии</h2>
+											<p>
+											Здесь собраны вакансии с основных сайтов Беларуси.
+											База постоянно обновляется и является актуальной.
+											</p>
+										</section>
+
+								</div>
+								<div class="3u 12u(mobile)">
+
+									<!-- Feature #3 -->
+										<section>
+											<a href="/courses" class="bordered-feature-image"><img src="{% static 'courses.jpg'%}"  height="166" alt="" /></a>
+											<h2>Курсы по Python</h2>
+											<p>
+											В данном разделе приведены наиболее популярные курсы по Python. 
+											
+											</p>
+										</section>
+
+								</div>
+								<div class="3u 12u(mobile)">
+
+									<!-- Feature #4 -->
+										<section>
+											<a href="/articles" class="bordered-feature-image"><img src="{% static 'articles.jpg'%}" height="166" alt="" /></a>
+											<h2>Актуальные статьи</h2>
+											<p>
+											Здесь собраны ссылки на актуальные и свежие статьи по Python.
+											</p>
+										</section>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Content -->
+				<div id="content-wrapper">
+					<div id="content">
+						<div class="container">
+							<div class="row">
+								<div class="4u 12u(mobile)">
+
+									<!-- Box #1 -->
+										<section>
+											<header>
+												<h2>Кто мы</h2>
+												<h3>
+													даже не знаю что здесь написать
+												</h3>
+											</header>
+											<a href="info" class="feature-image"><img src="{% static 'we.jpg'%}" alt="" /></a>
+											<p>
+											Мы маленькая компания людей, которая хочет помочь молодым специалистам и выпускникам в освоении языка Python.
+											</p>
+										</section>
+
+								</div>
+								<div class="4u 12u(mobile)">
+
+									<!-- Box #2 -->
+										<section>
+											<header>
+												<h2>Что мы делаем</h2>
+												<h3>Мы помогаем молодым специалистам</h3>
+											</header>
+											<ul class="check-list">
+												<li>Поиск молодых специалистов</li>
+												<li>Поиск вакансий</li>
+												<li>Поиск курсов</li>
+												<li>Поиск актуальных статей</li>
+											</ul>
+										</section>
+
+								</div>
+								<div class="4u 12u(mobile)">
+
+									<!-- Box #3 -->
+										<section>
+											<header>
+												<h2>Актуальные статьи</h2>
+											</header>
+											<ul class="quote-list">
+												<li>
+													<img src="{% static 'atc.jpg'%}" height="54" alt="" />
+													<a href = "{{articles_first.href}}">
+													<p>{{articles_first.name}}</p>
+													<span>{{articles_first.author}}</span> 														</a>
+												</li>
+												<li>
+													<img src="{% static 'atc.jpg'%}" height="54" alt="" />
+													<a href = "{{articles_first.href}}">
+													<p>{{articles_second.name}}</p>
+													<span>{{articles_second.author}}</span>
+													</a>
+												</li>
+												<li>
+													<img src="{% static 'atc.jpg'%}" height="54" alt="" />
+													<a href = "{{articles_first.href}}">
+													<p>{{articles_third.name}}</p>
+													<span>{{articles_third.author}}</span>
+													</a>
+												</li>
+											</ul>
+										</section>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="8u 12u(mobile)">
+
+								<!-- Links -->
+									<section>
+										<h2>Links to Important Stuff</h2>
+										<div>
+											<div class="row">
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</section>
+
+							</div>
+							<div class="4u 12u(mobile)">
+
+								<!-- Blurb -->
+									<section>
+										<h2>An Informative Text Blurb</h2>
+											<b>Наши координаты:</b>
+											<li>адрес;</li>
+											<b>и телефоны:</b>
+											<li>телефон</li>
+									</section>
+
+							</div>
+						</div>
+					</footer>
+				</div>
+
+			<!-- Copyright -->
+				<div id="copyright">
+					&copy; Все права защищены
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'jquery.min.js'%}"></script>
+			<script src="{% static 'skel.min.js'%}"></script>
+			<script src="{% static 'skel-viewport.min.js'%}"></script>
+			<script src="{% static 'util.js'%}"></script>
+			<!--[if lte IE 8]><script src="{% static 'respond.min.js'%}"></script><![endif]-->
+			<script src="{% static 'main.js'%}"></script>
+
+	</body>
+</html>

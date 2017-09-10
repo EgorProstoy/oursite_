@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Our Site</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="{% static 'html5shiv.js'%}"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'main.css' %}"/>
+		<!--[if lte IE 9]><link rel="stylesheet" href="{% static 'ie9.css'%}" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+						<div class="row">
+							<div class="12u">
+
+								<!-- Logo -->
+									<h1><a href="" id="logo">Our Site</a></h1>
+
+								<!-- Nav -->
+									<nav id="nav">
+										<a href="/home">Главная страница</a>
+										<a href="/participants">Участники</a>
+										<a href="/vacancies">Вакансии</a>
+										<a href="/courses">Курсы</a>
+										<a href="/articles">Статьи</a>
+									</nav>
+
+							</div>
+						</div>
+					</header>
+				</div>
+
+
+			<!-- Content -->
+				<div id="content-wrapper">
+					<div id="content">
+						<div class="container">
+							<div class="row">
+								<div class="3u 12u(mobile)">
+
+									<!-- Sidebar -->
+										<section>
+											<header>
+												<h2>Magna Phasellus</h2>
+											</header>
+											<ul class="link-list">
+												<li><a href="#">Sed dolore viverra</a></li>
+												<li><a href="#">Ligula non varius</a></li>
+												<li><a href="#">Nec sociis natoque</a></li>
+												<li><a href="#">Penatibus et magnis</a></li>
+												<li><a href="#">Dis parturient montes</a></li>
+												<li><a href="#">Nascetur ridiculus</a></li>
+											</ul>
+										</section>
+										<section>
+											<header>
+												<h2>Ipsum Dolor</h2>
+											</header>
+											<p>
+												Vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam
+												iaculis. Phasellus ultrices diam sit amet orci lacinia sed consequat.
+											</p>
+											<ul class="link-list">
+												<li><a href="#">Sed dolore viverra</a></li>
+												<li><a href="#">Ligula non varius</a></li>
+												<li><a href="#">Dis parturient montes</a></li>
+												<li><a href="#">Nascetur ridiculus</a></li>
+											</ul>
+										</section>
+
+								</div>
+								<div class="9u 9u(mobile) important(mobile)">
+
+									<!-- Main Content -->
+										<section>
+											<header>
+												<h2>Список участников</h2>
+												<h3>Все участники</h3>
+											</header>
+											<ul class="quote-list">
+												<li>
+													{%for i in participants%}
+													<img src="/static/media/{{i.photo}}" width ="35" alt="" />
+													
+													<p><a href = "info">{{i.name}} {{i.second_name}} {{i.midle_name}}</p>
+													</a>
+													<span><a href = "/{{i.project}}">{{i.project}}</a></span>
+													{%endfor%}
+												</li>
+											</ul>
+											{% if participants.paginator.num_pages > 1%}
+													<div id='pagination'>
+													{% if participants.has_previous %}
+														<div id='previous-page'><a href="?page={{participants.previous_page_number}}">&lt</a></div>
+													{% endif %}
+													{% if participants.has_next %}
+														<div id='next-page'><a href="?page={{participants.next_page_number}}">&gt</a></div>
+													{% endif %}
+													<div id="num-pages">
+													{% for pn in participants.paginator.page_range %}
+														{% if not forloop.first %}
+															&nbsp;&nbsp;|&nbsp;&nbsp;
+														{% endif %}
+														{% if participants.number != pn %}
+															<a href="?page={{pn}}">
+														{% endif %}
+														{{pn}}
+														{%if participants.number != pn %}
+															</a>
+														{%endif%}
+													{% endfor %}
+													</div>
+												{%endif%}						
+										</section>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="8u 12u(mobile)">
+
+								<!-- Links -->
+									<section>
+										<h2>Links to Important Stuff</h2>
+										<div>
+											<div class="row">
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</section>
+
+							</div>
+							<div class="4u 12u(mobile)">
+
+								<!-- Blurb -->
+									<section>
+										<h2>Контактная информация</h2>
+											<p>По всем Вопросам ображаться по адрусу:</p>
+											<li>адрес;</li>
+											<p>и телефонам:</p>
+											<li>телефон</li>
+									</section>
+
+
+							</div>
+						</div>
+					</footer>
+				</div>
+
+			<!-- Copyright -->
+				<div id="copyright">
+					&copy; Все права защищены
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'jquery.min.js'%}"></script>
+			<script src="{% static 'skel.min.js'%}"></script>
+			<script src="{% static 'skel-viewport.min.js'%}"></script>
+			<script src="{% static 'util.js'%}"></script>
+			<!--[if lte IE 8]><script src="{% static 'respond.min.js'%}"></script><![endif]-->
+			<script src="{% static 'main.js'%}"></script>
+
+	</body>
+</html>
